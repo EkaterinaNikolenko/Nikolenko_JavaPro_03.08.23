@@ -1,4 +1,4 @@
-package edu.hillel.nikolenko.homeworks.homework1;
+package edu.hillel.nikolenko.homeworks.homework1_2_git;
 
 public class HelloWorld {
     public static void main(String[] args) {
