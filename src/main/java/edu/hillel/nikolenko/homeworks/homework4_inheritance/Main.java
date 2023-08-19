@@ -16,6 +16,7 @@ public class Main {
 
         Animal bear = new Animal("Baloo");
         bear.swim(200);
+
         Animal monkey = new Animal("Monkey");
         monkey.run(120);
 

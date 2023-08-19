@@ -18,10 +18,6 @@ public class Dog extends Animal {
         this.length = length;
     }
 
-    public static int getDogCounter() {
-        return dogCounter;
-    }
-
     @Override
     public void run(int length) {
         if(length > 500) {

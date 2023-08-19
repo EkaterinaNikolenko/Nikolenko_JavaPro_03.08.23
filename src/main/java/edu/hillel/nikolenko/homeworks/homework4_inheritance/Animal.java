@@ -14,10 +14,6 @@ public class Animal {
         return name;
     }
 
-    public static int getAnimalCounter() {
-        return animalCounter;
-    }
-
     public void swim(int length) {
         System.out.println(this.name + " swam " + length + "m");
     }

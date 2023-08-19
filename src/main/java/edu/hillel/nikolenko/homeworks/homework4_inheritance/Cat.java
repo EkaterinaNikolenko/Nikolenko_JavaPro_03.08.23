@@ -17,10 +17,6 @@ public class Cat extends Animal {
         this.length = length;
     }
 
-    public static int getCatCounter() {
-        return catCounter;
-    }
-
     @Override
     public void run(int length) {
         if(length > 200) {
