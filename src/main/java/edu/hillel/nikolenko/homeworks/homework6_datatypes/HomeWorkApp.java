@@ -22,12 +22,15 @@ public class HomeWorkApp {
         writeSeveralTimes(sentence, times);
         System.out.println(isLeapYear(year));
     }
+
     static Random rand = new Random();
+
     public static void printThreeWords() {
         System.out.println("Orange");
         System.out.println("Banana");
         System.out.println("Apple");
     }
+
     public static void checkSumSign() {
         int a = rand.nextInt(200) - 100;
         int b = rand.nextInt(200) - 100;
@@ -39,6 +42,7 @@ public class HomeWorkApp {
             System.out.println("The sum is negative");
         }
     }
+
     public static void printColor() {
         int value = rand.nextInt(400) - 200;
         System.out.println("PrintColor value: " + value);
@@ -50,6 +54,7 @@ public class HomeWorkApp {
             System.out.println("Green");
         }
     }
+
     public static void compareNumbers() {
         int a = rand.nextInt(100);
         int b = rand.nextInt(100);
@@ -60,6 +65,7 @@ public class HomeWorkApp {
             System.out.println("a < b");
         }
     }
+
     public static boolean belongInterval(int a, int b) {
         int sum = a + b;
         System.out.println("BelongInterval sum: " + sum);
@@ -69,6 +75,7 @@ public class HomeWorkApp {
             return false;
         }
     }
+
     public static void checkNumberSign(int a) {
         if(a >= 0) {
             System.out.println("The number is positive");
@@ -76,6 +83,7 @@ public class HomeWorkApp {
             System.out.println("The number is negative");
         }
     }
+
     public static boolean isNegative(int a) {
         if(a < 0) {
             return true;
@@ -83,11 +91,13 @@ public class HomeWorkApp {
             return false;
         }
     }
+
     public static void writeSeveralTimes(String sen, int num) {
         for (int i = 0; i <= num; i++) {
             System.out.println(sen);
         }
     }
+
     public static boolean isLeapYear(int year) {
         if(year % 4 == 0) {
             if(year % 400 == 0) {
