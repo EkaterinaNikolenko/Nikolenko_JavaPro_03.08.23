@@ -56,7 +56,7 @@ public class Main {
         do {
             System.out.println("Enter the world: ");
             if(scanner.hasNextLine()) {
-                userWord = scanner.nextLine();
+                userWord = scanner.nextLine().toLowerCase();
                 if(userWord.intern() == word) {
                     System.out.println("You win");
                     break;
