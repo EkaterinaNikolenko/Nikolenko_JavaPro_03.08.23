@@ -2,6 +2,7 @@ package edu.hillel.nikolenko.homeworks.homework9_generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class Box<T extends Fruit> {
@@ -12,9 +13,7 @@ public class Box<T extends Fruit> {
     }
 
     public void addFruits(List<T> fruits) {
-        for (T t: fruits) {
-            box.add(t);
-        }
+        box.addAll(fruits);
     }
 
     public int getAmountOfFruits() {
@@ -35,8 +34,8 @@ public class Box<T extends Fruit> {
     }
 
     public void merge(Box<T> anotherBox) {
-        for (T t : anotherBox.getBox()) {
-            box.add(t);
+        if(this != box) {
+            box.addAll(anotherBox.getBox());
         }
         anotherBox.getBox().clear();
     }
