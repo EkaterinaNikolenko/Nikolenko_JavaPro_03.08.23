@@ -10,29 +10,10 @@ public class ArrayValueCalculator {
                 {"9", "10", "11", "12"}, {"13", "14", "15", "16"}};
         String[][] incorrectArray3 = {{"1", "2", "3", "4"}, {"5", "6", "7", "8"}, {"9", "10", "11", "12"}};
 
-        try {
-            System.out.println(doCalc(correctArray));
-        } catch (ArraySizeException | ArrayDataException exception) {
-            System.out.println(exception.getMessage());
-        }
-
-        try {
-            System.out.println(doCalc(incorrectArray1));
-        } catch (ArraySizeException | ArrayDataException exception) {
-            System.out.println(exception.getMessage());
-        }
-
-        try {
-            System.out.println(doCalc(incorrectArray2));
-        } catch (ArraySizeException | ArrayDataException exception) {
-            System.out.println(exception.getMessage());
-        }
-
-        try {
-            System.out.println(doCalc(incorrectArray3));
-        } catch (ArraySizeException | ArrayDataException exception) {
-            System.out.println(exception.getMessage());
-        }
+        tryCatch(correctArray);
+        tryCatch(incorrectArray1);
+        tryCatch(incorrectArray2);
+        tryCatch(incorrectArray3);
     }
 
     public static int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
@@ -43,11 +24,19 @@ public class ArrayValueCalculator {
                 try {
                     sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    throw new ArrayDataException("ArrayDataException: incorrect array's data in " + i + "-" + j);
+                    throw new ArrayDataException("ArrayDataException: incorrect array's data in " + i + "-" + j, e);
                 }
             }
         }
 
         return sum;
+    }
+
+    public static void tryCatch(String[][] array) {
+        try {
+            System.out.println(doCalc(array));
+        } catch (ArraySizeException | ArrayDataException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }
