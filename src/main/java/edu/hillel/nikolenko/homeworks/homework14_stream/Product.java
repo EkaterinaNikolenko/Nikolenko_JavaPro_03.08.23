@@ -4,11 +4,8 @@ import java.time.LocalDate;
 
 public class Product {
     private String type;
-
     private double price;
-
     private boolean applyDiscount;
-
     private LocalDate addingDate = LocalDate.now();
 
     public Product(String type, double price, boolean applyDiscount) {
