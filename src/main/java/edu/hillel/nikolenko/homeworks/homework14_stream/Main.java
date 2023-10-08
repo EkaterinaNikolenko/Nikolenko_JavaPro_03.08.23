@@ -65,25 +65,10 @@ public class Main {
     }
 
     public static List<Product> getLastThreeProduct(List<Product> list) {
-        List<Product> l = new ArrayList<>(list);
-        List<Product> lastThree = new ArrayList<>();
-
-        for(int i = 0; i < 3; i++) {
-            LocalDate date = l.stream()
-                    .map(Product::getAddingDate)
-                    .max(LocalDate::compareTo)
-                    .get();
-
-            Product max = l.stream()
-                    .filter(product -> product.getAddingDate() == date)
-                    .collect(Collectors.toList())
-                    .get(0);
-
-            lastThree.add(max);
-            l.remove(max);
-        }
-
-        return lastThree;
+        return list.stream()
+                .sorted(Comparator.comparing(Product::getAddingDate).reversed())
+                .limit(3)
+                .collect(Collectors.toList());
     }
 
     public static double getTotalPrice(List<Product> list, String category, double price) {
