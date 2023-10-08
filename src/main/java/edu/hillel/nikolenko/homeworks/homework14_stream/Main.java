@@ -21,8 +21,6 @@ public class Main {
         List<Product> products = new ArrayList<>(Arrays.asList(book1, book2, book3, phone1, phone2, phone3, sofa1, sofa2, sofa3));
 
         System.out.println("productsList: " + products);
-        System.out.println();
-
         System.out.println("getProductByPrice: " + getProductByPrice(products, "Book", 250));
         System.out.println("getProductWithDiscount: " + getProductWithDiscount(products, "Book", 10));
         System.out.println("getTheCheapestProduct: " + getTheCheapestProduct(products, "Book"));
