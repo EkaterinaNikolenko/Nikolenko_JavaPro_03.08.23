@@ -60,13 +60,21 @@ public class LessonDao {
     }
 
     public Lesson getOneLesson(int id) throws SQLException {
-        Lesson lesson = new Lesson("tx", new Homework("tx", "tx"));
+        Lesson lesson;
+        Map<Integer, Homework> homeworks = new HashMap<>();
         try (Statement statement = connection.createStatement()) {
+            try(ResultSet rs = statement.executeQuery("SELECT * FROM homework;")) {
+                while (rs.next()) {
+                    homeworks.put(rs.getInt("id"), new Homework(rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getString("description")));
+                }
+            }
             try (ResultSet resultSet = statement.executeQuery("SELECT * FROM lesson WHERE id = " + id + ";")) {
                 resultSet.next();
                 lesson = new Lesson(resultSet.getInt("id"),
                         resultSet.getString("name"),
-                        new Homework("txt", "txt"));
+                        homeworks.get(resultSet.getInt("homework_id")));
             }
         }
         return lesson ;
