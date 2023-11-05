@@ -2,35 +2,29 @@ package edu.hillel.nikolenko.homeworks.homework19_databases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class DataBaseConnection {
-
+public class DataBaseConnection implements AutoCloseable {
     public static final String url = "jdbc:mysql://localhost:3306/hw19_schema";
     public static final String username = "root";
     public static final String password = "MySQL_Nikolenko_12";
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+
+    public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection connection = getConnection();
-        try {
-            LessonDao studentDao = new LessonDao(connection);
-            studentDao.addLesson(new Lesson("test", new Homework(1,"name", "desc")));
-            System.out.println(studentDao.getLessons());
-            studentDao.deleteLesson(1);
-            System.out.println(studentDao.getLessons());
-            System.out.println(studentDao.getOneLesson(5));
-        } finally {
-            close(connection);
+        try (DataBaseConnection dataBaseConnection = new DataBaseConnection()) {
+                LessonDao studentDao = new LessonDao(dataBaseConnection.getConnection());
+                studentDao.addLesson(new Lesson("test", new Homework(1,"name", "desc")));
+                System.out.println(studentDao.getLessons());
+                studentDao.deleteLesson(1);
+                System.out.println(studentDao.getLessons());
+                System.out.println(studentDao.getOneLesson(5));
         }
 
     }
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
         Connection connection;
         try {
             connection = DriverManager.getConnection(url, username, password);
@@ -40,13 +34,8 @@ public class DataBaseConnection {
         return connection;
     }
 
-    public static void close(Connection connection) {
-        if(connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    @Override
+    public void close() throws Exception {
+        System.out.println("Closed");
     }
 }
