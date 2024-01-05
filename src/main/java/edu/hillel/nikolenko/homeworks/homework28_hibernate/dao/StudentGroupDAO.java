@@ -1,5 +1,7 @@
-package edu.hillel.nikolenko.homeworks.homework28_hibernate;
+package edu.hillel.nikolenko.homeworks.homework28_hibernate.dao;
 
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.session.HibernateSession;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.StudentGroup;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

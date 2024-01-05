@@ -1,9 +1,10 @@
-package edu.hillel.nikolenko.homeworks.homework28_hibernate;
+package edu.hillel.nikolenko.homeworks.homework28_hibernate.dao;
 
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.Course;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.session.HibernateSession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CourseDAO {

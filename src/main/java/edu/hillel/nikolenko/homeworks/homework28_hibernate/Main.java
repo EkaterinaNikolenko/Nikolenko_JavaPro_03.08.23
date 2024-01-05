@@ -1,5 +1,12 @@
 package edu.hillel.nikolenko.homeworks.homework28_hibernate;
 
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.dao.CourseDAO;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.dao.StudentDAO;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.dao.StudentGroupDAO;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.Course;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.Student;
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.StudentGroup;
+
 import java.util.List;
 
 public class Main {

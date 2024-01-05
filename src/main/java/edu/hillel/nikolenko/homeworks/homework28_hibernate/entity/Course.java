@@ -1,4 +1,4 @@
-package edu.hillel.nikolenko.homeworks.homework28_hibernate;
+package edu.hillel.nikolenko.homeworks.homework28_hibernate.entity;
 
 import jakarta.persistence.*;
 

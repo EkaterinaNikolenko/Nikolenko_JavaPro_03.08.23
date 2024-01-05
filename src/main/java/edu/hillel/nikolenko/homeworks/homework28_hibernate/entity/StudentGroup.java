@@ -1,5 +1,6 @@
-package edu.hillel.nikolenko.homeworks.homework28_hibernate;
+package edu.hillel.nikolenko.homeworks.homework28_hibernate.entity;
 
+import edu.hillel.nikolenko.homeworks.homework28_hibernate.entity.Student;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
