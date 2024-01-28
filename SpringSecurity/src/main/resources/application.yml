@@ -1,0 +1,37 @@
+server:
+  port: 8080
+jwt:
+  signing:
+    key: iuLTU8rq83ssfe4gfege5ge5hryjtyumjt7mt7mh6iu
+  key:
+    expiration: 604800000
+    valid: 60000
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: user
+  security:
+    user:
+      password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    your.package: INFO
+  file:
+    name: logs/file.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%t] %c{1} : %m%n"
+
